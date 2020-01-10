@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Login from '../Authentication/Login/Login';
 import Register from '../Authentication/Register/Register';
+import Logout from '../Authentication/Logout/Logout';
 import Organization from '../Organization/Organization';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
     route = (
       <Switch>
         <Route path="/organization" component={Organization} />
+        <Route path="/user/logout" component={Logout} />
         <Redirect from="/" to="/organization" />
       </Switch>
     );

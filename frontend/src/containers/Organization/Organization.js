@@ -1,9 +1,12 @@
 import React, { useState, useEffect }  from 'react';
+import { NavLink } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import MyOrganization from './MyOrganization/MyOrganization';
 import Dashboard from '../../components/Organization/Dashboard/Dashboard';
 
 import classes from './Organization.module.css';
+
+import Button from '../../components/UI/Button/Button';
 
 import * as userApi from '../../_services/user.api';
 import * as orgApi from '../../_services/organization.api';
@@ -71,18 +74,15 @@ const Organization = () => {
         getCurrentPageData();
     }, []);
 
-    
-    console.log(
-        currentUser,
-        currentOrg,
-        orgList
-    )
-
     return (
         <div className={classes.Organization}>
             <Navigation />
-            <h1>Welcome, John Smith</h1>
-            {/* <span><NavLink to="/user/logout">Logout</NavLink></span> */}
+            <h1>Welcome, {currentUser.name}</h1>
+            <NavLink to="/user/logout"> <Button type="button">Logout</Button></NavLink>
+            {
+                !currentOrg ? 
+                <p>You aren't a member of any organisations. Join an existing one or create a new one.</p> : null
+            }
             {
                 isLoading ? null :
                 currentOrg ?

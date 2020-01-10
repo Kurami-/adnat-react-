@@ -6,18 +6,18 @@ const Shifts = props => (
         style={{boxShadow: 'none'}}
         title="Shift"
         columns={[
-            { title: 'Employee Name', field: 'name', type: 'string' },
+            { title: 'Employee Name', field: 'name', type: 'string',  editable: 'never' },
             { title: 'Shift date', field: 'shiftDate', type: 'date' },
             { title: 'Start Time', field: 'startTime', type: 'time'},
             { title: 'Finish Time', field: 'finishTime', type: 'time'},
             { title: 'Break Length (minutes)', field: 'breakLength', type: 'numeric'},
-            { title: 'Hours worked', field: 'hoursWorked' },
-            { title: 'Shift cost', field: 'shiftCost', type: 'numeric'}
+            { title: 'Hours worked', field: 'hoursWorked',  editable: 'never' },
+            { title: 'Shift cost', field: 'shiftCost', type: 'numeric', editable: 'never'}
         ]}
         data={props.shifts}
         editable={{
-        isEditable: rowData => rowData.name === "shiftDate" ||
-            rowData.name === "startTime" || rowData.name === "finishTime" || rowData.name === "breakLength",
+        isEditable: rowData => rowData.name === "shiftDate" &&
+            rowData.name === "startTime" && rowData.name === "finishTime" && rowData.name === "breakLength",
         onRowUpdate: (newData, oldData) =>
             new Promise(resolve => {
             setTimeout(() => {
@@ -36,6 +36,11 @@ const Shifts = props => (
                 props.deleteShift(oldData.shiftId);
             }, 600);
             }),
+        }}
+        options={{
+            search: false,
+            filtering: false,
+            grouping: false
         }}
     />
 )
