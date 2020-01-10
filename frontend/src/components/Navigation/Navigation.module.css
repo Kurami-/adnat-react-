@@ -1,0 +1,14 @@
+.NavigationAppBar{
+    background: #8B008B !important;
+    min-height: 45px;
+    z-index: 1201;
+    box-shadow: none !important;
+}
+
+.NavigationAppBar .NavigationToolBar {
+    min-height: 45px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}

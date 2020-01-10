@@ -1,0 +1,20 @@
+.Register{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Register .RegisterFormContainer{
+    width: 40%;
+}
+
+.Register .RegisterFormContainer h1{
+    color: #8B008B;
+    text-align: center;
+}
+
+.Register .RegisterFormContainer form{
+    margin: 20px 0px;
+}

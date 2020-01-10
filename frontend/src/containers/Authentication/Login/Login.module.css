@@ -1,0 +1,20 @@
+.Login{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login .LoginFormContainer{
+    width: 40%;
+}
+
+.Login .LoginFormContainer h1{
+    color: #8B008B;
+    text-align: center;
+}
+
+.Login .LoginFormContainer form{
+    margin: 20px 0px;
+}

@@ -1,0 +1,10 @@
+.Organization{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 80px;
+}
+
+.Organization form{
+    margin: 20px 0px;
+}
